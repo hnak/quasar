@@ -1,7 +1,7 @@
-declare module "*.vue" {
+declare module '*.vue' {
     import * as Vue from 'vue';
-    export default typeof Vue
+    export default Vue;
 }
 
-declare module "quasar"
-declare const __THEME
+declare module 'quasar';
+declare const __THEME;
