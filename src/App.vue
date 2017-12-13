@@ -1,43 +1,38 @@
 <template>
   <!-- Don't drop "q-app" class -->
   <div id="q-app">
-  <q-layout ref="layout" view="lHh Lpr lff" :left-class="{'bg-grey-2': true}">
+  <q-layout ref="layout" view="hHr Lpr lfr" :left-class="{'bg-grey-2': true}">
     <q-toolbar slot="header">
-      <q-btn flat @click="$refs.layout.toggleLeft()">
-        <q-icon name="menu"></q-icon>
-      </q-btn>
-  
       <q-toolbar-title>
         {{ title }}
       </q-toolbar-title>
+      <q-btn flat @click="$refs.layout.toggleRight()">
+        <q-icon name="search" />
+      </q-btn>
+      <q-btn flat @click="$refs.layout.toggleRight()">
+        <q-icon name="notifications" />
+      </q-btn>
     </q-toolbar>
-    <!-- Left Side Panel -->
-    <div slot="left">
+    <!-- Right Side Panel -->
+    <div slot="right">
       <q-list no-border link inset-delimiter>
-        <q-list-header>Essential Links</q-list-header>
-        <q-item @click="launch('http://quasar-framework.org')">
+        <q-list-header>マイページ</q-list-header>
+        <q-side-link item to="/evaluation">
           <q-item-side icon="school"></q-item-side>
-          <q-item-main label="Docs" sublabel="quasar-framework.org"></q-item-main>
-        </q-item>
-        <q-item @click="launch('http://forum.quasar-framework.org')">
+          <q-item-main label="評価一覧"></q-item-main>
+        </q-side-link>
+        <!-- <q-item @click="launch('http://forum.quasar-framework.org')">
           <q-item-side icon="record_voice_over"></q-item-side>
           <q-item-main label="Forum" sublabel="forum.quasar-framework.org"></q-item-main>
-        </q-item>
-        <q-item @click="launch('https://gitter.im/quasarframework/Lobby')">
-          <q-item-side icon="chat"></q-item-side>
-          <q-item-main label="Gitter Channel" sublabel="Quasar Lobby"></q-item-main>
-        </q-item>
-        <q-item @click="launch('https://twitter.com/quasarframework')">
-          <q-item-side icon="rss feed"></q-item-side>
-          <q-item-main label="Twitter" sublabel="@quasarframework"></q-item-main>
-        </q-item>
+        </q-item> -->
       </q-list>
     </div>
     <!-- Navigation -->
     <q-tabs slot="navigation">
       <q-route-tab slot="title" icon="home" to="/home" replace hide="icon" label="ホーム" @select='setTitle("ホーム")' color="teal" />
-      <q-route-tab slot="title" icon="event" to="/schedule" replace label="予約スケジュール" @select='setTitle("予約スケジュール")' color="teal" />
+      <q-route-tab slot="title" icon="favorite" to="/schedule" replace label="お気に入り" @select='setTitle("お気に入り")' color="teal" />
       <q-route-tab slot="title" icon="message" to="/message" replace label="メッセージ" @select='setTitle("メッセージ")' color="teal" />
+      <q-route-tab slot="title" icon="event" to="/schedule" replace label="予約" @select='setTitle("予約")' color="teal" />
       <q-route-tab slot="title" icon="account circle" to="/mypage" replace label="マイページ" @select='setTitle("マイページ")' color="teal" />
     </q-tabs>
     <!-- sub-routes get injected here: -->
@@ -53,7 +48,7 @@
  */
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import store from './components/Store'
+import store from './store/index'
 
 @Component({
   store
