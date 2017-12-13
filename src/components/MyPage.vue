@@ -1,32 +1,35 @@
 <template>
-  <q-list highlight>
-    <q-list-header>Recent chats</q-list-header>
-    <q-item>
-      <q-item-side avatar="/statics/boy-avatar.png" />
-      <q-item-main>
-        <q-item-tile label>John Doe</q-item-tile>
-        <q-item-tile sublabel>Quasar enthusiast</q-item-tile>
-      </q-item-main>
-      <q-item-side right>
-        <q-item-tile icon="chat_bubble" color="green" />
-      </q-item-side>
-    </q-item>
-    <q-item>
-      <q-item-side>
-        <q-item-tile avatar>
-          <img src="~assets/ic_face_black_24px.svg" />
-        </q-item-tile>
-      </q-item-side>
-      <q-item-main label="John Doe" sublabel="Quasar enthusiast" />
-      <q-item-side right icon="chat_bubble" />
-    </q-item>
-    <q-item-separator />
-    <q-list-header>Previous chats</q-list-header>
-    <q-item>
-      <q-item-side avatar="/statics/guy-avatar.png" />
-      <q-item-main label="Jack Doe" />
-    </q-item>
-  </q-list>
+
+  <q-tabs>
+    <!-- Tabs - notice slot="title" -->
+    <q-tab slot="title" name="tab-1" label="すべて" color="black" />
+    <q-tab slot="title" name="tab-2" icon="mood" label="良い" color="pink-6"/>
+    <q-tab slot="title" name="tab-3" icon="sentiment neutral" label="普通" color="amber-6" />
+    <q-tab slot="title" name="tab-4" icon="mood bad" label="悪い" color="blue-6" />
+    <!-- Targets -->
+    <q-tab-pane name="tab-1">
+      <q-scroll-area style="height: 600px;">
+      <q-list highlight>
+        <q-item v-for="n in 10" :key="n">
+          <q-item-side>
+            <q-item-tile avatar>
+              <q-icon name="face" size="2.5rem" />
+            </q-item-tile>
+          </q-item-side>
+          <q-item-main class="bg-brown-1">
+            <q-item-tile avater><q-icon name="mood" size="1.5rem" color="pink-6" /></q-item-tile>
+            <q-item-tile label>佐藤 二郎</q-item-tile>
+            <q-item-tile sublabel>本日レッスン受けました。</br>勉強になりました。ありがとうございます！</q-item-tile>
+          </q-item-main>
+        </q-item>
+        <q-item-separator inset />
+      </q-list>
+    </q-scroll-area>
+    </q-tab-pane>
+    <q-tab-pane name="tab-2">Tab Two</q-tab-pane>
+    <q-tab-pane name="tab-3">Tab Three</q-tab-pane>
+    <q-tab-pane name="tab-4">Tab Four</q-tab-pane>
+  </q-tabs>
 </template>
 
 <script lang="ts">
@@ -37,4 +40,3 @@
   export default class MyPage extends Vue {
   }
 </script>
-

@@ -35,10 +35,10 @@
     </div>
     <!-- Navigation -->
     <q-tabs slot="navigation">
-      <q-route-tab slot="title" icon="home" to="/home" replace hide="icon" label="ホーム" @select='setTitle("ホーム")' />
-      <q-route-tab slot="title" icon="event" to="/schedule" replace label="予約スケジュール" @select='setTitle("予約スケジュール")' />
-      <q-route-tab slot="title" icon="message" to="/message" replace label="メッセージ" @select='setTitle("メッセージ")' />
-      <q-route-tab slot="title" icon="account circle" to="/mypage" replace label="マイページ" @select='setTitle("マイページ")' />
+      <q-route-tab slot="title" icon="home" to="/home" replace hide="icon" label="ホーム" @select='setTitle("ホーム")' color="teal" />
+      <q-route-tab slot="title" icon="event" to="/schedule" replace label="予約スケジュール" @select='setTitle("予約スケジュール")' color="teal" />
+      <q-route-tab slot="title" icon="message" to="/message" replace label="メッセージ" @select='setTitle("メッセージ")' color="teal" />
+      <q-route-tab slot="title" icon="account circle" to="/mypage" replace label="マイページ" @select='setTitle("マイページ")' color="teal" />
     </q-tabs>
     <!-- sub-routes get injected here: -->
     <router-view />
