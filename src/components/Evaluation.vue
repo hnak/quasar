@@ -25,17 +25,38 @@
         </q-list>
       </q-scroll-area>
     </q-tab-pane>
-    <q-tab-pane name="tab-2">Tab Two</q-tab-pane>
+    <q-tab-pane name="tab-2">
+      {{ user }}
+      <q-btn @click="getUser('12345')">
+        <q-icon name="search" />
+      </q-btn>
+    </q-tab-pane>
     <q-tab-pane name="tab-3">Tab Three</q-tab-pane>
     <q-tab-pane name="tab-4">Tab Four</q-tab-pane>
   </q-tabs>
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
-  import Component from 'vue-class-component'
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import HttpClient from '../network/httpclient';
 
-  @Component
-  export default class MyPage extends Vue {
+@Component
+export default class MyPage extends Vue {
+  private user: string = 'init';
+
+  private async getUser(userId) {
+    const res = await HttpClient.getAxios().get('/user', {
+      adapter: HttpClient.getAdaptor(),
+      params: {
+        userId,
+      },
+    });
+    if (res.status !== 200) {
+      console.log('Error!!');
+      process.exit();
+    }
+    this.user = res.data;
   }
+}
 </script>

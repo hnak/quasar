@@ -1,7 +1,8 @@
 // === DEFAULT / CUSTOM STYLE ===
 // wARNING! always comment out ONE of the two require() calls below.
 // 1. use next line to activate CUSTOM STYLE (./src/themes)
-require(`./themes/app.${__THEME}.styl`)
+// tslint:disable-next-line:no-var-requires
+require(`./themes/app.${__THEME}.styl`);
 // 2. or, use next line to activate DEFAULT QUASAR STYLE
 // require(`quasar/dist/quasar.${__THEME}.css`);
 // ==============================
@@ -11,17 +12,18 @@ require(`./themes/app.${__THEME}.styl`)
 // require(`quasar/dist/quasar.ie.${__THEME}.css`);
 
 import Vue from 'vue';
-import Quasar, * as All from 'quasar-framework'
+import Quasar, * as All from 'quasar-framework';
 import router from './router';
 import app from './App.vue';
 
 Vue.config.productionTip = false;
 Vue.use(Quasar, {
   components: All,
-  directives: All
-})
+  directives: All,
+});
 
 if (__THEME === 'mat') {
+  // tslint:disable-next-line:no-var-requires
   require('quasar-extras/roboto-font');
 }
 import 'quasar-extras/material-icons';
@@ -30,10 +32,10 @@ import 'quasar-extras/material-icons';
 // import 'quasar-extras/animate'
 
 Quasar.start(() => {
-  /* eslint-disable no-new */
+  // tslint:disable-next-line:no-unused-expression
   new Vue({
     el: '#q-app',
     router,
-    render: h => h(app)
+    render: h => h(app),
   });
 });

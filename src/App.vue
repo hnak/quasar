@@ -46,19 +46,19 @@
 /*
  * Root component
  */
-import Vue from 'vue'
-import Component from 'vue-class-component'
-import store from './store/index'
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import store from './store/index';
 
 @Component({
-  store
+  store,
 })
 export default class App extends Vue {
-  get title () {
-    return this.$store.getters.title
+  private get title() {
+    return this.$store.getters.title;
   }
-  setTitle (val) {
-    this.$store.commit('setTitle', val)
+  private setTitle(val) {
+    this.$store.commit('setTitle', val);
   }
 }
 </script>

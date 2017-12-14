@@ -1,5 +1,5 @@
 
-import Vuex, { MutationTree } from "vuex";
+import Vuex, { MutationTree } from 'vuex';
 
 class AppProperty {
     public title = 'ホーム';
@@ -10,7 +10,7 @@ const getters: MutationTree<AppProperty> = {
 };
 
 const mutations: MutationTree<AppProperty> = {
-    ["setTitle"](state: AppProperty, payload) {
+    ['setTitle'](state: AppProperty, payload) {
         state.title = payload;
     },
 };
@@ -18,5 +18,5 @@ const mutations: MutationTree<AppProperty> = {
 export default {
     state: new AppProperty(),
     getters,
-    mutations
-}
+    mutations,
+};

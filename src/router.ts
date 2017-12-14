@@ -10,7 +10,7 @@ import Error404 from './components/Error404.vue';
 Vue.use(VueRouter);
 
 export const AppRouter = new VueRouter({
-  mode: "history",
+  mode: 'history',
   routes: [
     { path: '/', component: Home }, // Default
     { path: '/home', component: Home },
@@ -18,8 +18,8 @@ export const AppRouter = new VueRouter({
     { path: '/message', component: Message },
     { path: '/mypage', component: MyPage },
     { path: '/evaluation', component: Evaluation },
-    { path: '*', component: Error404 } // Not found
-  ]
+    { path: '*', component: Error404 }, // Not found
+  ],
 });
 
 export default AppRouter;
