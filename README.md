@@ -62,7 +62,6 @@ VSCodeの設定に以下を追加してください。コメントアウト部�
     // "workbench.colorTheme": "Atom One Dark",　// Atomのカラーにする、要カラーテーマ
     // "git.path": "C:/Users/nakanoya150151/AppData/Local/Programs/Git/bin/git.exe", // gitのパス、VSCode起動時に怒られたので設定
     "tslint.typeCheck": true,
-    "vetur.validation.template": false,
 }
 ```
 
