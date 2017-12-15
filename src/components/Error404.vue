@@ -32,8 +32,8 @@
 </template>
 
 <script lang='ts'>
-    import Error404 from './Error404';
-    export default Error404;
+import Error404 from './Error404';
+export default Error404;
 </script>
 
 <style lang="stylus">

@@ -1,25 +1,8 @@
 {
-  "defaultSeverity": "error",
-  "extends": [
-      "tslint:recommended"
-  ],
-  "jsRules": {},
-  "rules": {
-      "quotemark": [
-          true,
-          "single"
-      ],
-      "indent": [
-          true
-      ],
-      "interface-name": [
-          false
-      ],
-      "arrow-parens": false,
-      // Pending fix for shorthand property names.
-      "object-literal-sort-keys": false,
-      // add by toiware
-      "ordered-imports": false
-  },
-  "rulesDirectory": []
-}
+    "extends": ["tslint-config-airbnb"],
+    "rules": {
+      "max-line-length": [true, 12000],
+      "object-shorthand-properties-first": false,
+      "import-name": false
+    }
+  }

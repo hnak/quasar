@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-    import Hello from './Hello';
-    export default Hello;
+import Hello from './Hello';
+export default Hello;
 </script>
 
 <style lang="stylus">

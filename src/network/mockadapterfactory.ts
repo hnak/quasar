@@ -1,4 +1,5 @@
 import { AxiosAdapter, AxiosRequestConfig } from 'axios';
+import Evaluation from '../model/Evaluation';
 
 export default class MockAdapterFactory {
   public static mockData = [{

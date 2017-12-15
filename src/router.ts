@@ -9,7 +9,7 @@ import Error404 from './components/Error404.vue';
 
 Vue.use(VueRouter);
 
-export const AppRouter = new VueRouter({
+export const appRouter = new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', component: Home }, // Default
@@ -22,4 +22,4 @@ export const AppRouter = new VueRouter({
   ],
 });
 
-export default AppRouter;
+export default appRouter;
