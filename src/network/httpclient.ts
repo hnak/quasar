@@ -11,6 +11,7 @@ const HTTP = Axios.create({
 const ADAPTOR: any = (process.env.NODE_ENV === 'development') ? MockAdapter.mockAdapter : HTTP.defaults.adapter;
 
 export default class HttpClient {
+  
   public static getAxios() {
     return HTTP;
   }
