@@ -1,9 +1,38 @@
 <template>
-    <div class="layout-padding logo-container non-selectable no-pointer-events">
-      <div class="logo" :style="position">
-        <img src="~assets/quasar-logo-full.svg">
-      </div>
+  <div class="layout-padding row docs-input justify-center">
+    <div style="width: 600px; max-width: 80vw;">
+      <q-chat-message
+        name="佐藤 二郎"
+        avatar="statics/quasar-logo.png"
+        :text="['明日のレッスンよろしくお願いします。']"
+        stamp="4 minutes ago"
+      />
+      <q-chat-message
+        name="あなた"
+        avatar="statics/quasar-logo.png"
+        :text="['こちらこそ、よろしくお願いいたします。']"
+        stamp="1 minutes ago"
+        sent
+      />
+      <q-input
+        style="width: 600px; max-width: 80vw; position: absolute; bottom: 0;"
+        class="text-secondary"
+        v-model="message"
+        color="teal"
+        inverted
+        :after="[
+          {
+            icon: 'send',
+            error: false,
+            handler () {
+              // do something...
+            }
+          }
+        ]"
+      />
+
     </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -12,19 +41,6 @@ import Component from 'vue-class-component';
 
 @Component
 export default class Message extends Vue {
+  private message: string = '';
 }
 </script>
-
-<style lang="stylus">
-.logo-container
-  width 255px
-  height 242px
-  perspective 800px
-  position absolute
-  top 50%
-  left 50%
-  transform translateX(-50%) translateY(-50%)
-.logo
-  position absolute
-  transform-style preserve-3d
-</style>
