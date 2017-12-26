@@ -4,7 +4,7 @@
     <q-layout ref="layout" view="hHr Lpr lfr" :left-class="{'bg-grey-2': true}">
       <q-toolbar slot="header">
         <q-toolbar-title>
-          {{ title }}
+          {{ getTitle() }}
         </q-toolbar-title>
         <q-btn flat @click="$refs.layout.toggleRight()">
           <q-icon name="search" />
@@ -17,14 +17,14 @@
       <div slot="right">
         <q-list no-border link inset-delimiter>
           <q-list-header>マイページ</q-list-header>
+          <q-side-link item to="/login">
+            <q-item-side icon="lock open"></q-item-side>
+            <q-item-main label="ログイン"></q-item-main>
+          </q-side-link>
           <q-side-link item to="/evaluation">
             <q-item-side icon="school"></q-item-side>
             <q-item-main label="評価一覧"></q-item-main>
           </q-side-link>
-          <!-- <q-item @click="launch('http://forum.quasar-framework.org')">
-            <q-item-side icon="record_voice_over"></q-item-side>
-            <q-item-main label="Forum" sublabel="forum.quasar-framework.org"></q-item-main>
-          </q-item> -->
         </q-list>
       </div>
       <!-- Navigation -->
@@ -54,7 +54,7 @@ import store from './store/index';
   store,
 })
 export default class App extends Vue {
-  private get title() {
+  private getTitle(): string {
     return this.$store.getters.title;
   }
   private setTitle(val) {
