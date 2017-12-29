@@ -46,5 +46,9 @@ export default class Message extends Vue {
   private sendMessage() {
     this.$socket.send(this.message);
   }
+  public mounted() {
+    console.log('this.code');
+    this.$options.sockets.onmessage = data => console.log(data);
+  }
 }
 </script>
