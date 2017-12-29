@@ -14,9 +14,12 @@
         stamp="1 minutes ago"
         sent
       />
+      </div>
       <q-input
-        style="width: 600px; max-width: 80vw; position: absolute; bottom: 0;"
-        class="text-secondary"
+        style="width: 90%; position: absolute; bottom: 0;"
+        type="textarea"
+        :max-height="100"
+        :min-rows="1"
         v-model="message"
         color="teal"
         inverted
@@ -30,8 +33,6 @@
           }
         ]"
       />
-
-    </div>
   </div>
 </template>
 

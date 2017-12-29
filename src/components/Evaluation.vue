@@ -7,7 +7,7 @@
     <q-tab slot="title" name="tab-4" icon="mood bad" label="悪い" class="text-blue-6" />
     <!-- Targets -->
     <q-tab-pane name="tab-1">
-      <q-scroll-area style="height: 600px;">
+      <q-scroll-area style="height: 700px;">
         <q-list highlight>
           <q-item v-for="item in evals" :key="item.id">
             <q-item-side>
