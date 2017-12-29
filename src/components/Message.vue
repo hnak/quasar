@@ -26,9 +26,8 @@
         :after="[
           {
             icon: 'send',
-            error: false,
             handler () {
-              // do something...
+              sendMessage()
             }
           }
         ]"
@@ -43,5 +42,9 @@ import Component from 'vue-class-component';
 @Component
 export default class Message extends Vue {
   private message: string = '';
+  
+  private sendMessage() {
+    this.$socket.send(this.message);
+  }
 }
 </script>

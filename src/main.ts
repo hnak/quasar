@@ -15,12 +15,14 @@ import Vue from 'vue';
 import Quasar, * as All from 'quasar-framework';
 import router from './router';
 import app from './App.vue';
+import VueNativeSock from 'vue-native-websocket';
 
 Vue.config.productionTip = false;
 Vue.use(Quasar, {
   components: All,
   directives: All,
 });
+Vue.use(VueNativeSock, 'ws://localhost:8080/message');
 
 if (__THEME === 'mat') {
   // tslint:disable-next-line:no-var-requires

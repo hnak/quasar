@@ -17,6 +17,7 @@
     "quasar-framework": "^0.14.4",
     "vue": "^2.5.0",
     "vue-class-component": "^6.1.1",
+    "vue-native-websocket": "^2.0.5",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
