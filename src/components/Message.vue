@@ -14,24 +14,24 @@
         stamp="1 minutes ago"
         sent
       />
+      </div>
       <q-input
-        style="width: 600px; max-width: 80vw; position: absolute; bottom: 0;"
-        class="text-secondary"
+        style="width: 90%; position: absolute; bottom: 0;"
+        type="textarea"
+        :max-height="100"
+        :min-rows="1"
         v-model="message"
         color="teal"
         inverted
         :after="[
           {
             icon: 'send',
-            error: false,
             handler () {
-              // do something...
+              sendMessage()
             }
           }
         ]"
       />
-
-    </div>
   </div>
 </template>
 
@@ -42,5 +42,13 @@ import Component from 'vue-class-component';
 @Component
 export default class Message extends Vue {
   private message: string = '';
+  
+  private sendMessage() {
+    this.$socket.send(this.message);
+  }
+  public mounted() {
+    console.log('this.code');
+    this.$options.sockets.onmessage = data => console.log(data);
+  }
 }
 </script>
